@@ -9,12 +9,20 @@ type Pair struct {
 	Hash string
 }
 
+func (p Pair) String() string {
+	return fmt.Sprintf("Hash of %s is %s", p.Path, p.Hash)
+}
+
 type PairWithLength struct {
 	Pair
 	Length int
 }
 
 func main() {
-	pl := PairWithLength{Pair{"aPath", "aHash"}, 100}
+	p := Pair{"aPath", "aHash"}
+	pl := PairWithLength{p, 100}
 	fmt.Println(pl.Path, pl.Length)
+
+
+	fmt.Println(pl) //this calls the String() function of the Pair struct
 }
