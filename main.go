@@ -1,10 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
+type Pair struct {
+	Path string
+	Hash string
+}
 
-
+type PairWithLength struct {
+	Pair
+	Length int
+}
 
 func main() {
-	fmt.Println("hi")
+	pl := PairWithLength{Pair{"aPath", "aHash"}, 100}
+	fmt.Println(pl.Path, pl.Length)
 }
